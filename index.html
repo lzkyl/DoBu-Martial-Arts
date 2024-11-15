@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoBu Martial Arts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <style>
+        /* Optionally style your page content */
+        .page h1, .page h2 {
+            text-align: center;
+        }
+        /* For a smoother transition effect when showing/hiding sections */
+        .page {
+            transition: display 0.5s ease-in-out;
+        }
+
+        .carousel-caption {
+            display: block !important; /* Ensure it is displayed */
+            opacity: 1 !important; /* Prevent fading */
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 20px; /* Padding for better appearance */
+        }
+
+        .carousel-caption h2, 
+        .carousel-caption p {
+            color: white; /* Ensure text is white for visibility */
+        }
+
+        @media (max-width: 576px) {
+            .carousel-caption h2 {
+                font-size: 1.5rem; /* Responsive font size for titles */
+            }
+            .carousel-caption p {
+                font-size: 0.9rem; /* Responsive font size for paragraphs */
+            }
+        }
+
+        /* Hiding all sections by default */
+        .page {
+            display: none;
+        }
+        
+        /* Make sure the active page is displayed */
+        #home {
+            display: block;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: black !important;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: red !important;
+        }
+
+        .navbar .nav-link.active {
+            color: red !important;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- Text above the Navbar -->
+    <div class="bg-black text-white text-center py-2">
+       <span class="fs-1">DOBU MARTIAL ARTS</span>
+    </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="loadPage('home')">
+                <img src="logo.png" alt="Logo" style="max-width: 150px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" onclick="loadPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#program" onclick="loadPage('program')">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#membership" onclick="loadPage('membership')">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#schedule" onclick="loadPage('schedule')">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facilities" onclick="loadPage('facilities')">Facilities</a>
+                    </li>
+                        <a class="nav-link" href="#aboutUs" onclick="loadPage('aboutUs')">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trainNow" onclick="loadPage('trainNow')">Train Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Home Page Section -->
+    <div id="home" class="page">
+      <div class="hero-section">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+              </div>
+              <!-- Carousel Slides -->
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img src="start.jpg" class="d-block w-100" alt="First Slide">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h2>Master the Art of Combat</h2>
+                          <p>Explore our classes in Judo, Jiu-Jitsu, Karate, Muay Thai, and more.</p>
+                          <button class="btn btn-dark" onclick="loadPage('program')">View Program</button>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <img src="2.jpg" class="d-block w-100" alt="Second Slide">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h2>About DoBu Martial Arts</h2>
+                          <p>DoBu Martial Arts is a premier martial arts gym offering a variety of classes in Jiu-Jitsu, Muay Thai, Karate, and Judo.</p>
+                          <button class="btn btn-dark" onclick="loadPage('program')">About DoBu Martial Arts</button>
+                        </div>
+                  </div>
+                  <div class="carousel-item">
+                      <img src="3.png" class="d-block w-100" alt="Third Slide">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h2>Affordable Pricing & Membership Options</h2>
+                          <p>We offer flexible membership options to suit your needs and budget.</p>
+                          <button class="btn btn-dark" onclick="loadPage('membership')">Pricing & Membership Options</button>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <img src="4.png" class="d-block w-100" alt="Fourth Slide">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h2>Everything you need for martial arts and fitness</h2>
+                          <p>Our gym boasts a spacious matted area for martial arts training, a fully-equipped fitness room, sauna and steam room for recovery, and top-tier changing and shower facilities. We ensure your comfort and success in your training journey.</p>
+                          <button class="btn btn-dark" onclick="loadPage('facilities')">Gym Facilities</button>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <img src="5.jpeg" class="d-block w-100" alt="Fifth Slide">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h2>Martial Arts Class Timetable</h2>
+                          <p>Check out our flexible timetable with classes available throughout the week.</p>
+                          <button class="btn btn-dark" onclick="loadPage('schedule')">Class Timetable</button>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <img src="6.jpg" class="d-block w-100" alt="Sixth Slide">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h2>Meet Our Expert Coaches</h2>
+                          <p>Our expert coaches are here to guide you on your martial arts journey.</p>
+                          <button class="btn btn-dark" onclick="loadPage('aboutUs')">Meet our Coaches</button>
+                      </div>
+                  </div>
+                  <!-- 7th Slide Added -->
+                  <div class="carousel-item">
+                      <img src="thef.jpg" class="d-block w-100" alt="Seventh Slide">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h2>Get Started Today!</h2>
+                          <p>Sign up today and become part of the DoBu Martial Arts family!</p>
+                          <button class="btn btn-dark" onclick="loadPage('trainNow')">Join Now</button>
+                      </div>
+                  </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+      </div>
+      <!-- Quick Links Section -->
+      <section class="quick-links text-center py-5">
+          <h2>Quick Links</h2>
+          <button class="btn btn-dark" onclick="loadPage('program')">Link to Program</button>
+          <button class="btn btn-dark" onclick="loadPage('membership')">Link to Membership</button>
+          <button class="btn btn-dark" onclick="loadPage('schedule')">Link to Schedule</button>
+          <button class="btn btn-dark" onclick="loadPage('facilities')">Link to Facilities</button>
+      </section>
+    </div>
+    <!-- Programs Section -->
+    <div id="program" class="page">
+      <div class="text-center py-5">
+          <h1>Program Overview</h1>
+          <p>We offer a variety of martial arts and fitness programs for all levels and age groups.</p>
+      </div>
+      <div class="container py-5">
+          <div class="container mt-4">
+              <div class="row">
+                  <!-- Left Column (Top Left) -->
+                  <div class="col-md-4">
+                      <div class="card">
+                          <div class="card-img-container">
+                              <!-- Thumbnail Image with Title -->
+                              <img src="fitness.jpg" class="card-img-top" alt="Fitness Program">
+                              <div class="card-title">Fitness Program</div>
+                          </div>
+                          <!-- Text content hidden by default -->
+                          <div class="card-body">
+                              <p class="card-text">Our fitness programs cater to individuals of all levels. Whether you’re a beginner or a seasoned athlete, we focus on building strength, cardiovascular health, flexibility, and overall wellness.</p>
+                              <ul>
+                                  <li><strong>Strength Training:</strong> Build muscle and endurance with free weights, bodyweight exercises, and resistance training.</li>
+                                  <li><strong>Cardio Workouts:</strong> Boost your heart health and burn calories with HIIT, circuit training, and more.</li>
+                                  <li><strong>Flexibility & Mobility:</strong> Improve your range of motion and prevent injury with stretching and mobility drills.</li>
+                                  <li><strong>Group Fitness Classes:</strong> Join a supportive community to stay motivated.</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+    
+                  <!-- Middle Column (Main Center Image) -->
+                  <div class="col-md-4">
+                      <div class="card">
+                          <div class="card-img-container">
+                              <!-- Thumbnail Image with Title -->
+                              <img src="martial.webp" class="card-img-top" alt="Martial Arts Program">
+                              <div class="card-title">Martial Arts</div>
+                          </div>
+                          <!-- Text content hidden by default -->
+                          <div class="card-body">
+                              <p class="card-text">Our martial arts programs offer both physical and mental growth. Whether you're looking for a traditional martial arts experience or modern combat sports, we have something for everyone.</p>
+                              <ul>
+                                  <li><strong>Brazilian Jiu-Jitsu (BJJ):</strong> Learn grappling skills, submission techniques, and ground control.</li>
+                                  <li><strong>Muay Thai:</strong> Improve striking, conditioning, and self-defense techniques with this art of eight limbs.</li>
+                                  <li><strong>Boxing:</strong> Master footwork, defense, and punching techniques.</li>
+                                  <li><strong>Kickboxing:</strong> Boost your cardio and strength with high-energy training.</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+    
+                  <!-- Right Column (Top Right) -->
+                  <div class="col-md-4">
+                      <div class="card">
+                          <div class="card-img-container">
+                              <!-- Thumbnail Image with Title -->
+                              <img src="selfdefense.jpg" class="card-img-top" alt="Self-Defense Program">
+                              <div class="card-title">Self-Defense</div>
+                          </div>
+                          <!-- Text content hidden by default -->
+                          <div class="card-body">
+                              <p class="card-text">Our self-defense program teaches practical, real-world techniques for staying safe. Build your confidence, learn how to stay calm under pressure, and become aware of potential threats.</p>
+                              <ul>
+                                  <li><strong>Street-Smart Defense:</strong> Learn basic self-defense skills for everyday situations.</li>
+                                  <li><strong>Situational Awareness:</strong> Recognize and avoid potential dangers.</li>
+                                  <li><strong>Escape Techniques:</strong> Break free from holds or grabs in real-life scenarios.</li>
+                                  <li><strong>Confidence Building:</strong> Develop mental toughness to handle emergencies.</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+    
+              </div>
+          </div>
+    
+          <!-- Bottom Row (Left and Right Columns Below Main Card) -->
+          <div class="row">
+              <!-- Bottom Left Card -->
+              <div class="col-md-6">
+                  <div class="card">
+                      <div class="card-img-container">
+                          <img src="adult.jpg" class="card-img-top" alt="Adult Programs">
+                          <div class="card-title">Adult Programs</div>
+                      </div>
+                      <div class="card-body">
+                          <p class="card-text">Our adult programs are designed to help you achieve your fitness and self-defense goals. Whether you're looking to learn new skills or stay active, we have flexible classes to fit your needs.</p>
+                          <ul>
+                              <li><strong>Mixed Fitness & Martial Arts:</strong> Strength training, cardio, and martial arts combined for maximum results.</li>
+                              <li><strong>Self-Defense for Adults:</strong> Practical self-defense techniques for personal safety.</li>
+                              <li><strong>Stress Relief & Mental Focus:</strong> Engage in activities that improve mental clarity and reduce stress.</li>
+                              <li><strong>Flexible Scheduling:</strong> Evening and weekend classes to suit your schedule.</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+    
+              <!-- Bottom Right Card -->
+              <div class="col-md-6">
+                  <div class="card">
+                      <div class="card-img-container">
+                          <img src="kids.png" class="card-img-top" alt="Junior Programs">
+                          <div class="card-title">Junior Programs</div>
+                      </div>
+                      <div class="card-body">
+                          <p class="card-text">Our junior programs introduce children to martial arts and fitness in a safe and supportive environment. These classes promote discipline, respect, and confidence.</p>
+                          <ul>
+                              <li><strong>Kids Martial Arts:</strong> Basic martial arts techniques in a fun and energetic setting.</li>
+                              <li><strong>Youth Self-Defense:</strong> Empower children with skills to protect themselves and resolve conflicts.</li>
+                              <li><strong>Fitness for Kids:</strong> Encourage healthy habits through physical activity and fun fitness challenges.</li>
+                              <li><strong>After-School Programs:</strong> Structured programs that promote growth and fitness outside school hours.</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+    
+          </div>
+      </div>
+    </div>
+    
+    <!-- Membership Section -->
+    <div id="membership" class="page">
+        <div class="text-center py-5">
+            <h1>Membership Options</h1>
+            <p>Choose from a variety of membership levels.</p>
+        </div>
+            <!-- Membership Buttons -->
+        <div class="container mt-5">
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-danger btn-lg btn-category" data-category="basic">Basic Category</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-danger btn-lg btn-category" data-category="intermediate">Intermediate Category</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-danger btn-lg btn-category" data-category="advanced">Advanced Category</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-danger btn-lg btn-category" data-category="elite">Elite Category</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-danger btn-lg btn-category" data-category="junior">Junior Category</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-danger btn-lg btn-category" data-category="hourly">Hourly Options</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="membershipModal" tabindex="-1" aria-labelledby="membershipModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="membershipModalLabel">Membership Category</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Modal Content (Dynamic based on button click) -->
+                        <div id="categoryContent">
+                            <!-- Content will be dynamically added here -->
+                        </div>
+                        <!-- Buttons inside modal -->
+                        <div class="btn-container">
+                            <button type="button" class="btn btn-back btn-custom" data-bs-dismiss="modal">Back</button>
+                            <a href="trainNow" class="btn btn-register btn-custom">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- JavaScript for Dynamic Modal Content -->
+        <script>
+            // Data for each category
+            const categories = {
+                basic: {
+                    title: "Basic Category: Start Your Journey",
+                    content: `
+                        <p>The Basic Membership is the perfect starting point for anyone looking to dip their toes into the world of martial arts. Whether you're a complete beginner or someone who's been curious about martial arts, this package gives you the opportunity to explore and grow at a comfortable pace.</p>
+                        <p><strong>Price:</strong> £25.00 per month</p>
+                        <p><strong>Includes:</strong></p>
+                        <ul>
+                            <li>1 Martial Art (Choose from Judo, Jiu-Jitsu, Karate, or Muay Thai)</li>
+                            <li>2 sessions per week</li>
+                        </ul>
+                        <p>At just £25 a month, you'll get the fundamentals you need to kickstart your martial arts journey. Join a community of like-minded individuals and experience the thrill of mastering new skills, building confidence, and staying fit—all while having fun!</p>
+                    `
+                },
+                intermediate: {
+                    title: "Intermediate Category: Level Up Your Skills",
+                    content: `
+                        <p>Ready to take your training to the next level? The Intermediate Membership is for those who’ve got the basics down and are looking to push themselves further. This package gives you more time on the mat and helps you refine your technique with three training sessions per week.</p>
+                        <p><strong>Price:</strong> €35.00 per month</p>
+                        <p><strong>Includes:</strong></p>
+                        <ul>
+                            <li>1 Martial Art (Choose from Judo, Jiu-Jitsu, Karate, or Muay Thai)</li>
+                            <li>3 sessions per week</li>
+                        </ul>
+                        <p>This membership is all about growth. Whether you're working on mastering your judo throws or perfecting your Muay Thai strikes, the Intermediate Membership will help you sharpen your skills, build strength, and achieve your personal martial arts goals.</p>
+                    `
+                },
+                advanced: {
+                    title: "Advanced Category: Train Like a Pro",
+                    content: `
+                        <p>For the serious martial artist who’s ready to conquer more than just one discipline, the Advanced Membership opens up new opportunities to train hard and train smart. With access to two martial arts and five sessions per week, you’ll be able to refine your techniques, expand your knowledge, and build the kind of discipline and focus that champions are made of.</p>
+                        <p><strong>Price:</strong> £45.00 per month</p>
+                        <p><strong>Includes:</strong></p>
+                        <ul>
+                            <li>2 Martial Arts (Choose any two: Judo, Jiu-Jitsu, Karate, or Muay Thai)</li>
+                            <li>5 sessions per week</li>
+                        </ul>
+                        <p>If you’re looking to be challenged, this membership will push you to new heights. Whether you're cross-training in different martial arts or focusing on technique, you'll get the depth of experience you need to become a well-rounded fighter.</p>
+                    `
+                },
+                elite: {
+                    title: "Elite Category: Unleash Your Full Potential",
+                    content: `
+                        <p>For those who aren’t just content with being good—they want to be elite. The Elite Membership gives you unlimited access to all classes, across every martial art we offer. Train as often as you like, at your own pace, and experience the ultimate flexibility to immerse yourself in the full spectrum of martial arts.</p>
+                        <p><strong>Price:</strong> £60.00 per month</p>
+                        <p><strong>Includes:</strong></p>
+                        <ul>
+                            <li>Unlimited access to all martial arts classes</li>
+                            <li>No restrictions—train in every available discipline</li>
+                        </ul>
+                        <p>This membership is for those who live and breathe martial arts. Whether you're perfecting your jiu-jitsu guard, honing your Muay Thai kickboxing, or diving into the discipline of Karate, you’ll have everything you need to reach the top of your game.</p>
+                    `
+                },
+                junior: {
+                    title: "Junior Category: A Fun & Safe Start for Young Warriors",
+                    content: `
+                        <p>At DoBu Martial Arts, we believe that the journey to becoming a martial artist starts young—and with our Junior Membership, your child will develop important life skills like focus, discipline, and respect while having fun and staying active.</p>
+                        <p><strong>Price:</strong> £25.00 per month</p>
+                        <p><strong>Includes:</strong></p>
+                        <ul>
+                            <li>Access to all kids’ martial arts classes</li>
+                            <li>Classes in Judo, Jiu-Jitsu, Karate, and more</li>
+                        </ul>
+                        <p>Our Junior Membership is designed for kids who want to learn martial arts in a safe and supportive environment. With expert coaches and age-appropriate classes, your child will not only develop martial arts skills but also build confidence, make friends, and stay healthy.</p>
+                    `
+                },
+                hourly: {
+                    title: "Hourly Options: One-on-One Coaching to Fast-Track Your Progress",
+                    content: `
+                        <p>Sometimes, you need personal attention to really elevate your skills—and that's where our Hourly Options come in. Whether you want to focus on a specific technique, improve your fitness, or receive personalized feedback, these private sessions give you the chance to train one-on-one with an expert instructor.</p>
+                        <p><strong>Price:</strong> £15.00 per hour</p>
+                        <p><strong>Includes:</strong></p>
+                        <ul>
+                            <li>One-on-one private tuition</li>
+                            <li>Personalized feedback and tailored training plans</li>
+                        </ul>
+                        <p>This is the perfect option for anyone serious about taking their training to the next level. You’ll get individualized attention that helps you make rapid progress, whether you're fine-tuning your grappling technique in Jiu-Jitsu or perfecting your kicks in Muay Thai. It’s your training, your pace, your goals.</p>
+                    `
+                }
+            };
+    
+            // Handle button clicks and change modal content
+            document.querySelectorAll('.btn-category').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const category = event.target.getAttribute('data-category');
+                    const categoryData = categories[category];
+    
+                    // Set modal title and content
+                    document.getElementById('membershipModalLabel').innerText = categoryData.title;
+                    document.getElementById('categoryContent').innerHTML = categoryData.content;
+    
+                    // Show the modal
+                    const modal = new bootstrap.Modal(document.getElementById('membershipModal'));
+                    modal.show();
+                });
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+    
+     
+        <!-- Schedule Section -->
+    <div id="schedule" class="page">
+        <div class="container mt-5">
+            <h2>Our Martial Arts Schedule</h2>
+            <p class="text-center">Check out our weekly class schedule below to find the best training times that fit your routine.</p>
+        </div>
+                <!-- Weekly View Table (Overview of the Entire Week) -->
+        <div class="section-title">Weekly View (Overview of the Entire Week)</div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            <thead class="header">
+                <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>06:00 - 07:30</td>
+                <td>Jiu-jitsu</td>
+                <td>Karate</td>
+                <td>Judo</td>
+                <td>Jiu-jitsu</td>
+                <td>Muay Thai</td>
+                <td>-</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>08:00 - 10:00</td>
+                <td>Muay Thai</td>
+                <td>Private Tuition</td>
+                <td>Private Tuition</td>
+                <td>Private Tuition</td>
+                <td>Jiu-jitsu</td>
+                <td>Private Tuition</td>
+                <td>Private Tuition</td>
+                </tr>
+                <tr>
+                <td>10:30 - 12:00</td>
+                <td>Private Tuition</td>
+                <td>Private Tuition</td>
+                <td>Private Tuition</td>
+                <td>Private Tuition</td>
+                <td>Judo</td>
+                <td>Judo</td>
+                <td>Karate</td>
+                </tr>
+                <tr>
+                <td>13:00 - 14:30</td>
+                <td>Open mat/Personal Practice</td>
+                <td>Open mat/Personal Practice</td>
+                <td>Open mat/Personal Practice</td>
+                <td>Open mat/Personal Practice</td>
+                <td>Kids Judo</td>
+                <td>Karate</td>
+                <td>Judo</td>
+                </tr>
+                <tr>
+                <td>15:00 - 17:00</td>
+                <td>Kids Jiu-jitsu</td>
+                <td>Kids Judo</td>
+                <td>Kids Karate</td>
+                <td>Kids Jiu-jitsu</td>
+                <td>Muay Thai</td>
+                <td>Muay Thai</td>
+                <td>Jiu-jitsu</td>
+                </tr>
+                <tr>
+                <td>17:30 - 19:00</td>
+                <td>Karate</td>
+                <td>Muay Thai</td>
+                <td>Judo</td>
+                <td>Jiu-jitsu</td>
+                <td>Private Tuition</td>
+                <td>-</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>19:00 - 21:00</td>
+                <td>Jiu-jitsu</td>
+                <td>Judo</td>
+                <td>Jiu-jitsu</td>
+                <td>Karate</td>
+                <td>Private Tuition</td>
+                <td>-</td>
+                <td>-</td>
+                </tr>
+            </tbody>
+            </table>
+                </div>      
+                        <!-- Program View (Detailed Class Descriptions & Booking Information) -->
+        <div class="section-title">Program Overview</div>
+        <div class="container">
+            <h4>Jiu-jitsu</h4>
+            <p><strong>Description:</strong> Brazilian Jiu-jitsu (BJJ) focuses on ground fighting, submissions, and grappling. Techniques include joint locks, chokeholds, and positional control. Classes are available for all levels, from beginner to advanced.</p>
+            <p><strong>Duration:</strong> 1.5 to 2 hours.</p>
+            <p><strong>Booking:</strong> Available for members at all levels (Basic, Intermediate, Advanced, Elite).</p>
+
+            <h4>Karate</h4>
+            <p><strong>Description:</strong> Traditional Karate emphasizes striking techniques and self-defense. Classes include punches, kicks, and forms (Kata). Available for all levels, including children.</p>
+            <p><strong>Duration:</strong> 1.5 hours.</p>
+            <p><strong>Booking:</strong> Open to all membership levels.</p>
+
+            <h4>Muay Thai</h4>
+            <p><strong>Description:</strong> Muay Thai, known as the "Art of Eight Limbs," focuses on striking using fists, elbows, knees, and shins. The program includes conditioning, pad work, and sparring.</p>
+            <p><strong>Duration:</strong> 1.5 hours.</p>
+            <p><strong>Booking:</strong> Available for Intermediate to Elite members.</p>
+
+            <h4>Judo</h4>
+            <p><strong>Description:</strong> Judo is a grappling-based martial art that emphasizes throws, joint locks, and pins. It is ideal for both self-defense and sport competition.</p>
+            <p><strong>Duration:</strong> 1.5 hours.</p>
+        </div>
+
+
+    </div>
+<!-- Facilities Page -->
+<div id="facilities" class="page">    
+    <div class="container my-5">
+     <h1 class="text-center mb-4">Our Facilities</h1>
+        <p class="intro-text mb-5">
+            Our world-class facilities are designed to support every aspect of your training journey. Whether you are here to sharpen your skills, recover, or relax, we have the perfect space for you. Take a look at the premium amenities we offer:
+        </p>
+    </div>
+
+    <!-- Facility Cards Row -->
+    <div class="row">
+
+    <!-- Matted Martial Arts Area -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="matted.png" alt="Matted Martial Arts Area" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Matted Martial Arts Area</h5>
+                    <p class="card-text">
+                        Step into our spacious, fully-equipped training floor. Whether you're grappling in Jiu-Jitsu,
+                        striking in Muay Thai, or perfecting Karate, this is where champions are made.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span>Where Champions Are Made</span>
+                </div>
+            </div>
+        </div>
+
+         <!-- Fully Equipped Gym -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="gym.png" alt="Fully Equipped Gym" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Fully-Equipped Gym</h5>
+                    <p class="card-text">
+                        Not just about lifting weights—our gym offers cutting-edge cardio machines, resistance
+                        equipment, and strength programs to help you push your limits and improve your performance.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span>Strength Meets Performance</span>
+                </div>
+            </div>
+        </div>
+
+                <!-- Steam Room Section -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="steam.png" alt="Steam Room" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Steam Room</h5>
+                    <p class="card-text">
+                        Relax and recover after training in our steam room. The steam helps accelerate muscle recovery
+                        while promoting deep relaxation and well-being.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span>Relax and Recover</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sauna Section -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="sauna.png" alt="Sauna" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Sauna</h5>
+                    <p class="card-text">
+                        Enjoy the benefits of our sauna after an intense workout. Ideal for relieving muscle tension and
+                        enhancing your recovery process.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span>Recharge and Detoxify</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Changing Rooms -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="locker.png" alt="Changing Rooms" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Changing Rooms</h5>
+                    <p class="card-text">
+                        Designed with privacy and comfort in mind, our changing rooms offer secure lockers and
+                         spacious areas to make your transition from training to relaxation smooth and stress-free.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span>Comfort and Convenience</span>
+                 </div>
+             </div>
+        </div>
+
+        <!-- Shower Rooms -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="shower.png" alt="Shower Rooms" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Shower Rooms</h5>
+                    <p class="card-text">
+                        After a hard workout or class, refresh and revitalize in our modern shower rooms equipped
+                        with high-pressure showers for your convenience.
+                    </p>
+                    </div>
+                <div class="card-footer">
+                    <span>Refresh and Revitalize</span>
+                 </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- About Us Section -->
+<div id="aboutUs" class="page">
+    <div class="container mt-5"></div>
+
+        <!-- Mission Section -->
+            <section class="mission-header">
+                <h1 class="display-4">Our Mission Story</h1>
+                <p class="lead">At WebSpace, we believe in the power of innovation, simplicity, and accessibility. Our mission is to help businesses, both large and small, build a strong and dynamic online presence through clean, custom-built websites that enhance the user experience. We aim to take the complexities of web development and turn them into seamless, functional, and beautiful websites that suit the unique needs of our clients.</p>
+                <p class="lead">Our journey started with a simple idea: to create a web development service that provides innovative solutions, but with a personal touch. Since our inception, we have worked with a wide variety of organizations, delivering websites that are visually compelling and built to scale, keeping in mind the diverse needs of their users and industries.</p>
+                <p class="lead">When we were commissioned by DoBu Martial Arts, we knew this project would be both exciting and meaningful. It’s not just about building another website—it’s about creating an online space that embodies the energy, discipline, and dedication of the martial arts community. Together with DoBu Martial Arts, we are not only helping them promote their services but also building a platform that will foster growth, encourage fitness, and spread the passion of martial arts to an ever-growing audience.</p>
+            </section>
+
+        <!-- Instructor Bios Section -->
+    <h3 class="text-center mb-4">Instructor bios</h3>
+    <div class="row g-4">
+        <!-- Coach 1 -->
+        <div class="col-md-4">
+            <div class="card coach-card">
+                <div class="card-body text-center">
+                    <h5 class="coach-name">Mauricio Gomez</h5>
+                </div>
+                <img src="gomez.png" alt="Mauricio Gomez" class="coach-img">
+                <div class="card-body">
+                    <p class="coach-bio">Head Martial Arts Coach & Gym Owner. Mauricio holds a 4th Dan Blak Belt in Judo and a 3rd Dan Black Belt in Jiu-Jitsu. <strong>Fun fact:</strong> Mauricio spent a year training under top-level coaches in Brazil to perfect his Jiu-Jitsu techniques!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach 2 -->
+        <div class="col-md-4">
+            <div class="card coach-card">
+                <div class="card-body text-center">
+                    <h5 class="coach-name">Sarah Nova</h5>
+                </div>
+                <img src="sarah.png" alt="Sarah Nova" class="coach-img">
+                <div class="card-body">
+                    <p class="coach-bio">Assistant Martial Arts Coach. A 1st Dan Black Belt in Karate and an accredited Muay Thai coach, Sarah specializes in improving technique and working with kids. <strong>Fun fact:</strong> She loves helping children find their confidence through martial arts!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach 3 -->
+        <div class="col-md-4">
+            <div class="card coach-card">
+                <div class="card-body text-center">
+                    <h5 class="coach-name">Guy Victory</h5>
+                </div>
+                <img src="guy.png" alt="Guy Victory" class="coach-img">
+                <div class="card-body">
+                    <p class="coach-bio">Assistant Martial Arts Coach. Holding a 2nd Dan Black Belt in Jiu-Jitsu and a 1st Dan Black Belt in Judo, Guy is a well-rounded martial artist. <strong>Fun fact:</strong> Guy won a gold medal in Judo while studying in Japan!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach 4 -->
+        <div class="col-md-4">
+            <div class="card coach-card">
+                <div class="card-body text-center">
+                    <h5 class="coach-name">Morris Davis</h5>
+                </div>
+                <img src="davis.png" alt="Morris Davis" class="coach-img">
+                <div class="card-body">
+                    <p class="coach-bio">Assistant Martial Arts Coach. A 3rd Dan Black Belt in Karate and an accredited Muay Thai coach, Morris loves teaching the roundhouse kick. <strong>Fun fact:</strong> He mastered his kick during his time in Thailand!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach 5 -->
+        <div class="col-md-4">
+            <div class="card coach-card">
+                <div class="card-body text-center">
+                    <h5 class="coach-name">Traci Santiago</h5>
+                </div>
+                <img src="traci.png" alt="Traci Santiago" class="coach-img">
+                <div class="card-body">
+                    <p class="coach-bio">Fitness Coach. With a BSc in Sports Science, Traci specializes in strength and conditioning for combat athletes. <strong>Fun fact:</strong> She’s also a certified nutrition coach!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach 6 -->
+        <div class="col-md-4">
+            <div class="card coach-card">
+                <div class="card-body text-center">
+                    <h5 class="coach-name">Harpreet Kaur</h5>
+                </div>
+                <img src="harpeet.png" alt="Harpreet Kaur" class="coach-img">
+                <div class="card-body">
+                    <p class="coach-bio">Fitness Coach. Harpreet holds a BSc in Physiotherapy and an MSc in Sports Science, making her an expert in injury prevention. <strong>Fun fact:</strong> Her favorite part of coaching is seeing clients grow stronger after overcoming setbacks!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Train Now Section-->
+<div id="trainNow" class="page">
+    <h3 class="section-title">Train Now with Us!</h3>
+    <form action="#" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your full name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Why do you want to train with us?</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Tell us your martial arts goals"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
+    <!-- Contact Form Section -->
+    <div class="mb-3">
+        <h3 class="section-title">Contact Us</h3>
+        <form action="#" method="post">
+            <div class="mb-3">
+                <label for="contact-name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="contact-name" name="contact-name" required placeholder="Enter your full name">
+            </div>
+            <div class="mb-3">
+                <label for="contact-email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="contact-email" name="contact-email" required placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea class="form-control" id="contact-message" name="contact-message" rows="4" required placeholder="How can we assist you?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Send Message</button>
+        </form>
+    </div>
+</div>
+<!-- Footer Section -->
+<footer class="footer bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+        <div class="row mt-4">
+            <!-- Copyright and Trademark Section -->
+            <div class="col-12 text-center">
+                <p class="mb-0">© 2024 DoBu Martial Arts. All rights reserved.</p>
+                <p class="mb-0">DoBu Martial Arts® is a registered trademark.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        function loadPage(page) {
+            // Hide all sections
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.style.display = 'none');
+            
+            // Show the selected page
+            document.getElementById(page).style.display = 'block';
+    
+            // Update active class in navbar
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`.nav-link[href="#"]`).classList.add('active');
+        }
+    
+        // Load the default page
+        loadPage('home');
+
+</script>
+</body>
+</html>

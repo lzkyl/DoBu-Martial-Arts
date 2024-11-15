@@ -1,0 +1,740 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles (Top Bar) */
+.bg-light {
+    background-color: #000000 !important;
+}
+
+.bg-light .fs-1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: black !important;
+    padding: 1rem;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #dc3545 !important; /* Red color on hover */
+}
+
+.navbar .nav-link.active {
+    color: #dc3545 !important; /* Red color for active link */
+}
+
+/* Carousel Styles */
+.hero-section {
+    position: relative;
+    height: 100vh;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+.carousel-caption h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
+}
+
+/* Style the carousel control buttons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    font-size: 30px; /* Adjust arrow size */
+    color: white;    /* Set arrow color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;  /* Remove any default background */
+    border: none;  /* Remove default border */
+}
+
+/* Optional: Add hover effect */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Light background on hover */
+}
+
+/* Optional: Add padding to the button to align properly */
+.carousel-control-prev,
+.carousel-control-next {
+    padding: 0;
+}
+
+/* Quick Links Section */
+.quick-links {
+    padding: 40px 20px;
+    background-color: black;
+    color: white;
+}
+
+.quick-links h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.quick-links button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.quick-links button:hover {
+    background-color: #dc3545; /* Red on hover */
+}
+
+/* Page Sections */
+.page {
+    background-color: #000000;
+    display: none;
+   color: white;
+}
+
+#home {
+    display: block;
+}
+
+/* Card Container */
+.card {
+    position: relative;
+    margin-bottom: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for card */
+  }
+  
+  /* Card Image Container (wrapper for image and title) */
+  .card-img-container {
+    position: relative;
+  }
+  
+  /* Thumbnail Image Style */
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Title on Image */
+  .card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  /* Card Body - Content (Initially Hidden) */
+  .card-body {
+    display: none; /* Hidden by default */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    margin-top: 15px; /* Space between image and text */
+    z-index: 2;
+  }
+  
+  /* Lists inside card-body */
+.card-body ul {
+    padding-left: 20px;
+    list-style-type: disc; /* Default bullet style */
+    margin-top: 10px;
+}
+  
+  /* Show the content on hover over the card */
+  .card:hover .card-body {
+    color: white;
+    display: block; /* Display the text content */
+  }
+  
+  /* Optional: Image zoom effect on hover */
+  .card-img-container:hover .card-img-top {
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+  
+ /* General Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    color: white; /* White text color for the body */
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #000000; /* Black background for the modal */
+    color: white;               /* White text color */
+    padding: 20px;              /* Padding inside modal */
+    border-radius: 10px;        /* Rounded corners for the modal */
+}
+
+.modal-header {
+    border-bottom: none;       /* Remove border from header */
+    padding: 15px 20px;         /* Padding inside modal header */
+}
+
+.modal-title {
+    font-weight: bold;          /* Bold text for the modal title */
+    font-size: 1.5rem;          /* Larger title for readability */
+    color: white;               /* White title text */
+}
+
+.modal-body {
+    font-size: 1rem;            /* Standard font size for content */
+    color: white;               /* White text color inside modal */
+    line-height: 1.6;           /* Increased line height for readability */
+    margin-bottom: 20px;        /* Margin at the bottom of the content */
+}
+
+.modal-body p {
+    margin-bottom: 15px;        /* Add spacing between paragraphs */
+}
+
+ul {
+    list-style-type: disc;      /* Bulleted list */
+    margin-left: 20px;          /* Indentation for list */
+    margin-bottom: 20px;        /* Add spacing between the list and other content */
+}
+
+/* Button Styles */
+.btn-custom {
+    color: red;
+    font-size: 1.25rem;         /* Large font size for buttons */
+    padding: 12px 30px;         /* Padding inside buttons */
+    text-align: center;         /* Center text inside button */
+    width: 100%;                /* Make buttons full-width inside container */
+    font-weight: bold;          /* Bold text in buttons */
+    border-radius: 5px;         /* Rounded corners for buttons */
+    transition: all 0.3s ease;  /* Smooth transition for hover effects */
+    cursor: pointer;           /* Pointer cursor on hover */
+}
+
+/* Red Background Button (Back & Register Now) */
+.btn-back,
+.btn-register {
+    background-color: #dc3545;  /* Red background */
+    color: white;               /* White text */
+    border: none;               /* Remove border */
+}
+
+.btn-back:hover,
+.btn-register:hover {
+    background-color: #c82333;  /* Darker red background on hover */
+}
+
+/* Flex container for buttons */
+.btn-container {
+    display: flex;
+    justify-content: space-between; /* Space buttons on either side */
+    gap: 10px;                     /* Add space between buttons */
+    margin-top: 20px;              /* Margin above buttons */
+}
+
+.btn-container .btn {
+    width: 45%;                    /* Each button takes 45% width */
+}
+
+/* Category Title Styling */
+.category-title {
+    font-weight: bold;            /* Bold text for category titles */
+    font-size: 1.5rem;            /* Large font size for category titles */
+    color: white;                 /* White text color */
+    margin-bottom: 20px;          /* Spacing below the title */
+}
+
+/* Make sure links (Register Now) have no text decoration */
+.btn-register {
+    text-decoration: none;        /* Remove underline from links */
+}
+
+/* Modal Close Button */
+.btn-close {
+    background: none;            /* Remove background from close button */
+    border: none;                /* Remove border */
+    color: white;                /* White close button icon */
+    font-size: 1.5rem;            /* Larger size for the close icon */
+}
+
+/* Optional: Styling for Back and Register Now buttons when active */
+.btn-back:focus,
+.btn-register:focus {
+    outline: none;               /* Remove outline on button focus */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Add red shadow on focus */
+}
+
+/* General Button Styles */
+.btn-custom {
+    background-color: #dc3545; /* Red background for category and modal buttons */
+    color: white;              /* White text */
+    font-size: 1.25rem;        /* Larger font size for readability */
+    font-weight: bold;         /* Bold text */
+    padding: 12px 30px;        /* Padding for the buttons */
+    border-radius: 5px;        /* Rounded corners for buttons */
+    border: none;              /* Remove border */
+    cursor: pointer;          /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 10px;
+}
+
+/* Hover effect for all buttons */
+.btn-custom:hover {
+    background-color: #c82333; /* Darker red background on hover */
+}
+
+/* Button container */
+.btn-container {
+    display: flex;
+    justify-content: space-between; /* Space buttons on either side */
+    gap: 10px;                     /* Add space between buttons */
+    margin-top: 20px;              /* Margin above buttons */
+}
+
+.btn-custom:focus {
+    outline: none;                      /* Remove default outline on focus */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Add a red shadow on focus */
+}
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:black;
+}
+
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: black;
+    color: black;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color:white
+}
+
+/* Table Styles for Weekly View */
+.table-responsive {
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color:rgba(255, 0, 0, 0.583);
+    color: #fff;
+    font-weight: bold;
+}
+
+.table td {
+    background-color: #f9f9f9;
+}
+
+.table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.table td:hover {
+    background-color: #e1e1e1;
+}
+
+.table tr:first-child th {
+    border-top: none;
+}
+
+.table td,
+.table th {
+    font-size: 1rem;
+}
+
+/* Styling for Program View (Class Descriptions) */
+h4 {
+    font-size: 1.5rem;
+    color:white;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1rem;
+    color:white;
+    margin-bottom: 15px;
+}
+
+p strong {
+    color: black;
+}
+
+h4 + p {
+    margin-top: 5px;
+}
+
+/* Styling for the Booking Information and Description */
+p {
+    line-height: 1.6;
+}
+
+/* Specific Styling for Table Headers and Columns */
+th {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    font-size: 1rem;
+    text-align: center;
+    padding: 12px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.table td:hover {
+    background-color: #f1f1f1;
+}
+
+.table thead {
+    background-color: red;
+    color: white;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Weekdays Column Styling */
+.table td:first-child {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.table td:nth-child(2) {
+    background-color: #eaf7ff;
+}
+
+.table td:nth-child(3) {
+    background-color: #f9faf9;
+}
+
+.table td:nth-child(4) {
+    background-color: #eaf7ff;
+}
+
+.table td:nth-child(5) {
+    background-color: #f9faf9;
+}
+
+.table td:nth-child(6) {
+    background-color: #eaf7ff;
+}
+
+.table td:nth-child(7) {
+    background-color: #f9faf9;
+}
+
+.table td:nth-child(8) {
+    background-color: #eaf7ff;
+}
+
+/* Hover Effect for Rows */
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Styling for the Program View Container */
+.program-view-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Buttons or Links (If needed) */
+.btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.762);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color:red;
+}
+/* Program View */
+#program h4 {
+    font-size: 24px;
+    color: #343a40; /* Dark text for the program view title */
+    font-weight: bold;
+}
+
+#program .list-group-item {
+    background-color: #f8f9fa; /* Light background for list items */
+    border: 1px solid #ddd;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#program .list-group-item:hover {
+    background-color:red; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust Navbar to be stacked on smaller screens */
+    .navbar-nav {
+        text-align: center;
+    }
+
+    /* Adjust the layout of the schedule tabs */
+    .tab-content {
+        padding: 20px;
+    }
+
+    /* Make columns full width in weekly view for small screens */
+    #weekly .col-md-2, #weekly .col-md-10 {
+        flex: 0 0 100%;
+    }
+
+    /* Adjust text sizes for better readability on small screens */
+    #schedule h2 {
+        font-size: 28px;
+    }
+
+    #schedule p {
+        font-size: 16px;
+    }
+
+    #weekly h5, #program h4 {
+        font-size: 18px;
+    }
+
+    .nav-pills .nav-item .nav-link {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+/* Facilities Section */
+.facility-section {
+    background-color: #212529;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.facility-section h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* About Us Section */
+#aboutUs {
+    padding: 50px 20px;
+}
+
+#aboutUs h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#aboutUs h3 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+#aboutUs .row {
+    margin-top: 20px;
+}
+
+#aboutUs .col-md-4 {
+    margin-bottom: 20px;
+}
+.coach-bio strong {
+      color: red;
+    }
+/* Train Now Section */
+#trainNow {
+    padding: 50px 20px;
+    background-color:black;
+}
+
+#trainNow h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form .form-label {
+    font-weight: bold;
+}
+
+form .form-control {
+    margin-bottom: 15px;
+}
+
+form .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form .btn-danger:hover {
+    background-color: #bd2130;
+}
+/* Card Hover Effect */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Additional Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Footer Section */
+footer {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    .quick-links button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+
+    .membership-option {
+        margin: 10px 0;
+    }
+}
+
